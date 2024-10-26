@@ -39,30 +39,36 @@ export default function MountainSection() {
       </header>
 
       <div className="grid grid-cols-9 gap-4 mt-20">
-        {images.map((img, index) => (
-          <div
-            key={index}
-            className={`transition-transform duration-500 ease-in-out transform ${
-              index === 0
-                ? hoveredCard !== null
-                  ? "col-span-1" // Scale down the first card
-                  : "col-span-3"
-                : hoveredCard === index
-                ? "col-span-3" // Scale up the hovered card
-                : "col-span-1"
-            } card-mountain`}
-            onMouseEnter={() => handleMouseEnter(index)}
-            onMouseLeave={handleMouseLeave}
-          >
-            <div className="h-[30em] bg-red-300 rounded-xl overflow-hidden">
-              <img
-                src={img}
-                alt={`Mountain ${index + 1}`}
-                className="object-cover w-full h-full"
-              />
+        {images.map((img, index) => {
+          const isHovered = hoveredCard === index;
+          const isFirstCard = index === 0;
+
+          return (
+            <div
+              key={index}
+              className={`transition-transform duration-500 ease-in-out transform ${
+                isHovered
+                  ? "col-span-3 scale-110" // Scale up the hovered card
+                  : isFirstCard && hoveredCard !== null
+                  ? "col-span-1 scale-90" // Scale down the first card when another is hovered
+                  : isFirstCard
+                  ? "col-span-3" // Keep the first card at its original size
+                  : "col-span-1"
+              } card-mountain`}
+              style={{ minWidth: "120px" }} // Set a fixed minimum width for cards
+              onMouseEnter={() => handleMouseEnter(index)}
+              onMouseLeave={handleMouseLeave}
+            >
+              <div className="h-[30em] bg-red-300 rounded-xl overflow-hidden">
+                <img
+                  src={img}
+                  alt={`Mountain ${index + 1}`}
+                  className="object-cover w-full h-full"
+                />
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </section>
   );
