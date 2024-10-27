@@ -13,6 +13,7 @@ export default {
     backgroundImage: {
       heroImage: "url('/hero-image.png')",
       heroImage2: "url('/hero-image2.png')",
+      heroImage3: "url('/hero-image3.png')",
       pattern: "url('/pattern.png')",
       footerImage: "url('/footer.png')",
       logo: "url('/logo.png')",

@@ -5,6 +5,7 @@ import "./index.css";
 import App from "./App.jsx";
 import Home from "./pages/Home";
 import Mountain from "./pages/Mountain.jsx";
+import Equipment from "./pages/Equipment.jsx";
 
 const router = createBrowserRouter([
   {
@@ -14,6 +15,10 @@ const router = createBrowserRouter([
   {
     path: "/gunung",
     element: <Mountain />,
+  },
+  {
+    path: "/perlengkapan",
+    element: <Equipment />,
   },
 ]);
 

@@ -95,12 +95,12 @@ export const Navbar = () => {
             >
               Gunung
             </Link>
-            <a
+            <Link
               className="font-medium text-white hover:text-gray-400 focus:outline-none focus:text-gray-400"
-              href="#"
+              to={"/perlengkapan"}
             >
               Perlengkapan
-            </a>
+            </Link>
           </div>
         </div>
       </nav>
