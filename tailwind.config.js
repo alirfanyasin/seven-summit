@@ -12,14 +12,23 @@ export default {
     },
     backgroundImage: {
       heroImage: "url('/hero-image.png')",
+      heroImage2: "url('/hero-image2.png')",
       pattern: "url('/pattern.png')",
       footerImage: "url('/footer.png')",
       logo: "url('/logo.png')",
+      lawuBg: "url('/lawu.jpg')",
+      semeruBg: "url('/semeru.jpg')",
+      arjunoBg: "url('/arjuno.jpg')",
+      raungBg: "url('/raung.jpg')",
+      welirangBg: "url('/welirang.jpg')",
+      butakBg: "url('/butak.jpg')",
+      argopuroBg: "url('/argopuro.jpeg')",
     },
 
     extend: {
       colors: {
         skyBlueColor: "#9AB7DA",
+        darkGreenColor: "#4A7185",
       },
     },
   },
