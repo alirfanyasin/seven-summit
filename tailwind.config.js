@@ -8,7 +8,7 @@ export default {
   theme: {
     container: {
       center: true,
-      padding: "2rem",
+      padding: "10rem",
     },
     backgroundImage: {
       heroImage: "url('/hero-image.png')",

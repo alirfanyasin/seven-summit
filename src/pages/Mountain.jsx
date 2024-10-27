@@ -13,9 +13,8 @@ import iconRute from "../../public/icon-rute.png";
 
 export default function Mountain() {
   const [bgClass, setBgClass] = useState("bg-heroImage2");
-  const [selectedMountain, setSelectedMountain] = useState(null); // Track selected mountain
+  const [selectedMountain, setSelectedMountain] = useState(null);
 
-  // Define the datas array before using it
   const datas = [
     {
       name: "Semeru",
@@ -77,7 +76,7 @@ export default function Mountain() {
       bgClass: "bg-argopuroBg",
       description:
         "Gunung Argapura (sering dieja Gunung Argopuro) adalah sebuah gunung berapi kompleks yang terdapat di Jawa Timur, Indonesia. Gunung Argapura mempunyai ketinggian setinggi 3.088 meter. Gunung Argapura merupakan bekas gunung berapi yang kini sudah tidak aktif lagi. Puncak Gunung Argapura adalah titik tertinggi di Pegunungan Iyang.",
-      address: "Probolinggo, Situbondo, Bondowoso, Jember",
+      address: "Probolinggo, Situbondo, Bondowoso",
       track: ["Bremi", "Baderan"],
     },
     {
@@ -87,7 +86,7 @@ export default function Mountain() {
       image: lawuImg,
       bgClass: "bg-lawuBg",
       description:
-        "Gunung Lawu adalah sebuah gunung berapi aktif yang terletak di Pulau Jawa, tepatnya di perbatasan Jawa Tengah dan Jawa Timur, Indonesia. Gunung Lawu memiliki ketinggian sekitar 3.265 mdpl. Gunung Lawu terletak di antara tiga kabupaten, yaitu Karanganyar di Jawa Tengah, Ngawi, dan Magetan di Jawa Timur. Status gunung ini adalah gunung api, yang diperkirakan terakhir meletus pada tanggal 28 November 1885[3][4] dan telah lama tidak aktif",
+        "Gunung Lawu adalah sebuah gunung berapi aktif yang terletak di Pulau Jawa, tepatnya di perbatasan Jawa Tengah dan Jawa Timur, Indonesia. Gunung Lawu memiliki ketinggian sekitar 3.265 mdpl. Gunung Lawu terletak di antara tiga kabupaten, yaitu Karanganyar di Jawa Tengah, Ngawi, dan Magetan di Jawa Timur. Status gunung ini adalah gunung api, yang diperkirakan terakhir meletus pada tanggal 28 November 1885 dan telah lama tidak aktif",
       address: "Karanganyar, Magetan",
       track: ["Cemoro Sewu", "Cemoro Kandang", "Candi Cetho", "Singolangu"],
     },
@@ -191,18 +190,18 @@ export default function Mountain() {
           )}
         </div>
 
-        <section className="flex w-[75%] absolute gap-3 overflow-x-auto flex-nowrap bottom-10">
+        <section className="flex w-[80%] absolute gap-3 overflow-x-auto flex-nowrap bottom-10">
           {datas.map((data, index) => (
             <div
               key={index}
-              className="w-full p-4 bg-glass hover:cursor-pointer rounded-xl"
+              className="w-full p-4 bg-glass hover:cursor-pointer rounded-xl group"
               onClick={() => handleCardClick(data)}
             >
-              <div className="relative overflow-hidden rounded-xl h-72">
+              <div className="relative overflow-hidden rounded-xl h-52">
                 <img
                   src={data.image}
                   alt={`Gunung ${data.name}`}
-                  className="object-cover w-full h-full rounded-md"
+                  className="object-cover w-full h-full transition duration-500 ease-in-out rounded-md group-hover:scale-125 group-hover:rotate-6"
                 />
                 <div className="absolute bottom-0 left-0 right-0 w-full h-16 p-2 text-white">
                   <h4 className="font-semibold">{data.name}</h4>
