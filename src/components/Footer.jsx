@@ -1,24 +1,26 @@
 export default function Footer() {
   return (
-    <footer className="bg-footerImage bg-cover bg-top bg-no-repeat min-h-screen mt-[200px]">
-      <div className="flex justify-center items-center text-white h-screen">
-        <div className="text-center w-full">
-          <h1 className="text-6xl mb-5 font-bold">Subscribe</h1>
-          <p className="font-light">
+    <footer className="bg-footerImage bg-cover bg-top bg-no-repeat container min-h-screen mt-[200px]">
+      <div className="flex items-center justify-center h-screen text-white">
+        <div className="w-full text-center">
+          <h1 className="mb-5 text-4xl font-bold md:text-5xl lg:text-6xl">
+            Subscribe
+          </h1>
+          <p className="text-sm font-light md:text-base">
             Lihat informasi lebih lengkap dengan mengikuti <br />
             sosial media kami
           </p>
 
-          <form action="" className="mt-10 w-5/12 mx-auto">
-            <div className="bg-glass p-5 rounded-xl flex justify-between items-center gap-3">
+          <form action="" className="w-full mx-auto mt-10 lg:w-5/12">
+            <div className="flex items-center justify-between gap-3 p-3 lg:p-5 bg-glass rounded-xl">
               <input
                 type="text"
                 name=""
                 id=""
-                className="h-10 w-full basis-9/12 px-3 bg-transparent"
+                className="w-full h-6 px-3 bg-transparent lg:h-10 basis-9/12"
                 placeholder="Masukkan alamat email"
               />
-              <button className="bg-white text-black font-semibold basis-3/12 h-10 flex justify-center items-center rounded-md">
+              <button className="flex items-center justify-center h-10 text-sm font-semibold text-black bg-white rounded-md lg:text-base basis-3/12">
                 Subscribe
               </button>
             </div>
@@ -27,7 +29,7 @@ export default function Footer() {
           <div id="social-media" className="flex justify-center mt-10">
             <a
               href="#"
-              className="bg-glass w-16 h-16 flex justify-center mx-2 items-center rounded-full"
+              className="flex items-center justify-center w-16 h-16 mx-2 rounded-full bg-glass"
             >
               <iconify-icon
                 icon="mdi:instagram"
@@ -36,7 +38,7 @@ export default function Footer() {
             </a>
             <a
               href="#"
-              className="bg-glass w-16 h-16 flex justify-center mx-2 items-center rounded-full"
+              className="flex items-center justify-center w-16 h-16 mx-2 rounded-full bg-glass"
             >
               <iconify-icon
                 icon="hugeicons:twitter"
@@ -45,7 +47,7 @@ export default function Footer() {
             </a>
             <a
               href="#"
-              className="bg-glass w-16 h-16 flex justify-center mx-2 items-center rounded-full"
+              className="flex items-center justify-center w-16 h-16 mx-2 rounded-full bg-glass"
             >
               <iconify-icon
                 icon="iconoir:facebook"
@@ -54,7 +56,7 @@ export default function Footer() {
             </a>
             <a
               href="#"
-              className="bg-glass w-16 h-16 flex justify-center mx-2 items-center rounded-full"
+              className="flex items-center justify-center w-16 h-16 mx-2 rounded-full bg-glass"
             >
               <iconify-icon
                 icon="iconoir:youtube"
@@ -65,7 +67,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <p className="font-light text-center text-white relative bottom-10">
+      <p className="relative text-sm font-light text-center text-white lg:text-base bottom-10">
         Copyright © 2024. All Rights Reserved.
       </p>
     </footer>

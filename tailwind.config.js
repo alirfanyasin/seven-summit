@@ -16,7 +16,12 @@ export default {
       footerImage: "url('/footer.png')",
       logo: "url('/logo.png')",
     },
-    extend: {},
+
+    extend: {
+      colors: {
+        skyBlueColor: "#9AB7DA",
+      },
+    },
   },
   plugins: [require("preline/plugin")],
 };

@@ -2,16 +2,18 @@ import rute from "../../public/rute.png";
 export default function AboutSection() {
   return (
     <>
-      <section className="mb-52 bg-pattern bg-cover">
-        <div className="flex justify-center items-center gap-4 h-[800px] container">
-          <div className="basis-1/2 flex">
+      <section className="bg-cover mb-52 bg-pattern">
+        <div className="flex justify-center items-center gap-4 lg:h-[800px] h-72 container">
+          <div className="hidden basis-1/2 lg:block">
             <img src={rute} alt="" className="items-center rounded-xl" />
           </div>
 
-          <div className="basis-1/2 ">
-            <header className="text-[#9AB7DA]">
-              <h2 className="text-4xl mb-8 font-bold">Tentang Kami</h2>
-              <p className="font-light text-xl">
+          <div className="lg:basis-1/2 basis-full">
+            <header className="text-skyBlueColor">
+              <h2 className="mb-8 text-2xl font-bold lg:text-4xl">
+                Tentang Kami
+              </h2>
+              <p className="text-sm font-light lg:text-xl">
                 Kami menyediakan informasi lengkap tentang tempat-tempat yang
                 menawarkan persediaan perlengkapan pendakian di sekitar kawasan
                 Seven Summit Jawa Timur. Dari penyewaan alat hingga pembelian
