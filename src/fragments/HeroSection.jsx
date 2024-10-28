@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { Navbar } from "../components/Navbar";
 import { NotFoundCity } from "../components/NotFoundCity";
 
@@ -12,7 +13,6 @@ import snowIcon from "../../public/weather/snow.png";
 import humidityIcon from "../../public/icon-humidity.png";
 import windIcon from "../../public/icon-wind.png";
 
-import { useEffect, useState } from "react";
 import axios from "axios";
 
 export default function HeroSection() {
@@ -34,36 +34,53 @@ export default function HeroSection() {
     setMapMountain(event.target.value);
   };
 
+  // switch (description) {
+  //   case "":
+
+  //     break;
+
+  //   default:
+  //     break;
+  // }
+
   useEffect(() => {
     if (dataWeather && dataWeather.data && dataWeather.data.weather) {
       const weatherMain = dataWeather.data.weather[0].main;
 
-      console.log(dataWeather.data);
+      // console.log(dataWeather.data);
 
       const tempInCelsius = (dataWeather.data.main.temp - 273.15).toFixed(1);
       setTemperature(parseInt(tempInCelsius));
       setDescription(dataWeather.data.weather[0].description);
       setHumidity(dataWeather.data.main.humidity);
       setWind(dataWeather.data.wind.speed);
+      // setImageWeather(
+      //   " https://openweathermap.org/img/wn/" + weatherMain + ".png"
+      // );
 
       switch (weatherMain) {
         case "Clear":
           setImageWeather(clearIcon);
+          setDescription("Cerah");
           break;
         case "Clouds":
           setImageWeather(cloudIcon);
+          setDescription("Berawan");
           break;
         case "Rain":
           setImageWeather(rainIcon);
+          setDescription("Hujan");
           break;
         case "Snow":
           setImageWeather(snowIcon);
           break;
         case "Mist":
           setImageWeather(mistIcon);
+          setDescription("Berkabut");
           break;
         case "Haze":
           setImageWeather(mistIcon);
+          setDescription("Kabut-kabut");
           break;
         default:
           setImageWeather("");
@@ -92,7 +109,7 @@ export default function HeroSection() {
   return (
     <section
       className={`h-screen bg-center bg-cover bg-heroImage ${
-        dataWeather != null ? "mb-[350px]" : "mb-0"
+        dataWeather != null ? "md:mb-[350px]  mb-[1100px]" : "mb-0"
       }`}
     >
       <Navbar />
@@ -203,25 +220,24 @@ export default function HeroSection() {
 
       {/* Weather and Mountain Start */}
       <div
-        className={`container relative -mt-14 ${
+        className={`container relative md:-mt-14  ${
           dataWeather == null || cityName === "error" ? "hidden" : "block"
         } `}
       >
-        <div className="flex items-center justify-between gap-5">
-          <div className="basis-8/12">
+        <div className="items-center justify-between gap-5 md:flex">
+          <div className="mb-5 md:basis-8/12 basis-full md:mb-0">
             <div className="w-full p-5 overflow-hidden rounded-xl bg-glass">
               <iframe
                 src={mapMountain}
                 width="100%"
                 height="460"
-                allowfullscreen=""
                 loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
+                referrerPolicy="no-referrer-when-downgrade"
               ></iframe>
             </div>
           </div>
-          <div className="basis-4/12">
-            <div className="w-full p-7 bg-glass rounded-xl">
+          <div className="md:basis-4/12 basis-full">
+            <div className="w-full p-5 bg-glass rounded-xl">
               <img
                 src={imageWeather}
                 alt="Weather Icon"
@@ -243,7 +259,7 @@ export default function HeroSection() {
                   />
                   <div className="basis-8/12">
                     <h4 className="font-semibold text-md">{humidity} %</h4>
-                    <p className="text-sm font-light">Humidity</p>
+                    <p className="text-xs font-light">Kelembapan</p>
                   </div>
                 </div>
 
@@ -255,7 +271,7 @@ export default function HeroSection() {
                   />
                   <div className="basis-8/12">
                     <h4 className="font-semibold text-md">{wind} Km/h</h4>
-                    <p className="text-sm font-light">Wind Speed</p>
+                    <p className="text-xs font-light">Kecepatan Angin</p>
                   </div>
                 </div>
               </div>

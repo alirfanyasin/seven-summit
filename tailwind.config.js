@@ -8,7 +8,11 @@ export default {
   theme: {
     container: {
       center: true,
-      padding: "10rem",
+      padding: {
+        DEFAULT: "1rem", // Padding default untuk ukuran layar kecil
+        lg: "10rem", // Padding untuk ukuran layar besar
+        md: "5rem", // Padding untuk ukuran layar menengah
+      },
     },
     backgroundImage: {
       heroImage: "url('/hero-image.png')",

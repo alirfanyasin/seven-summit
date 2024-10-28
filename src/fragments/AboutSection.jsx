@@ -2,7 +2,7 @@ import rute from "../../public/rute.png";
 export default function AboutSection() {
   return (
     <>
-      <section className="bg-cover mb-52 bg-pattern">
+      <section className="mb-20 bg-cover md:mb-52 bg-pattern">
         <div className="flex justify-center items-center gap-4 lg:h-[800px] h-72 container">
           <div className="hidden basis-1/2 lg:block">
             <img src={rute} alt="" className="items-center rounded-xl" />
