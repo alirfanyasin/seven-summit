@@ -16,7 +16,9 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 export default function HeroSection() {
-  const [mapMountain, setMapMountain] = useState("");
+  const [mapMountain, setMapMountain] = useState(
+    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15799.755934582523!2d112.91210776475985!3d-8.107695677435354!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd63e89e1d817bb%3A0x9c14d4ed3c488f54!2sGn.%20Semeru!5e0!3m2!1sid!2sid!4v1730097301986!5m2!1sid!2sid"
+  );
   const [cityName, setCityName] = useState("");
   const [dataWeather, setDataWeather] = useState(null);
   const [imageWeather, setImageWeather] = useState("");
