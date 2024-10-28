@@ -10,10 +10,15 @@ import butakImg from "../../public/butak.jpg";
 import iconLocation from "../../public/icon-location.png";
 import iconHeight from "../../public/icon-height.png";
 import iconRute from "../../public/icon-rute.png";
+import MountainPhone from "../fragments/MountainPhone";
 
 export default function Mountain() {
   const [bgClass, setBgClass] = useState("bg-heroImage2");
   const [selectedMountain, setSelectedMountain] = useState(null);
+
+  useEffect(() => {
+    window.HSStaticMethods.autoInit();
+  }, []);
 
   const datas = [
     {
@@ -110,112 +115,113 @@ export default function Mountain() {
 
   const handleCardClick = (data) => {
     setBgClass(data.bgClass);
-    setSelectedMountain(data); // Update selected mountain
+    setSelectedMountain(data);
   };
 
-  useEffect(() => {
-    window.HSStaticMethods.autoInit();
-  }, []);
-
-  // Set default selected mountain to the first item if none is selected
   const defaultMountain = datas[0];
   const mountainToDisplay = selectedMountain || defaultMountain;
 
   return (
-    <main className={`h-screen bg-center bg-cover ${bgClass}`}>
+    <main className={`h-screen bg-center bg-cover ${bgClass} `}>
       <Navbar />
 
-      <div className="container flex flex-wrap items-center justify-center h-screen">
-        <header
-          className={`w-full text-center text-darkGreenColor mb-52 ${
-            bgClass === "bg-heroImage2" ? "block" : "hidden"
-          }`}
-        >
-          <h1 className="mb-5 font-bold capitalize text-7xl">
-            7 Gunung Jawa Timur
-          </h1>
-          <p className="text-xl">
-            Mari jelajahi keindahan alam di Jawa Timur dengan menaklukkan 7
-            gunung <br /> bersama petualangan seru yang menanti di setiap
-            langkahmu
-          </p>
-        </header>
+      <div className="hidden lg:block">
+        <div className="container flex flex-wrap items-center justify-center h-screen ">
+          <header
+            className={`w-full text-center text-darkGreenColor mb-52 ${
+              bgClass === "bg-heroImage2" ? "block" : "hidden"
+            }`}
+          >
+            <h1 className="mb-5 font-bold capitalize text-7xl">
+              7 Gunung Jawa Timur
+            </h1>
+            <p className="text-xl">
+              Mari jelajahi keindahan alam di Jawa Timur dengan menaklukkan 7
+              gunung <br /> bersama petualangan seru yang menanti di setiap
+              langkahmu
+            </p>
+          </header>
 
-        <div className={bgClass !== "bg-heroImage2" ? "block" : "hidden"}>
-          {mountainToDisplay && (
-            <div className="flex items-center justify-between gap-6 mb-52">
-              <div className="text-white basis-7/12">
-                <h1 className="text-6xl font-bold">
-                  Gunung {mountainToDisplay.name}
-                </h1>
-                <p className="mt-5 text-xl font-light">
-                  {mountainToDisplay.description}
-                </p>
+          <div className={bgClass !== "bg-heroImage2" ? "block" : "hidden"}>
+            {mountainToDisplay && (
+              <div className="flex items-center justify-between gap-6 mb-52">
+                <div className="text-white basis-7/12">
+                  <h1 className="text-6xl font-bold">
+                    Gunung {mountainToDisplay.name}
+                  </h1>
+                  <p className="mt-5 text-xl font-light">
+                    {mountainToDisplay.description}
+                  </p>
+                </div>
+                <div className="flex flex-col basis-5/12">
+                  <div className="flex items-center justify-end gap-3 mb-3 text-white">
+                    <div className="text-xl font-light">
+                      {mountainToDisplay.address}
+                    </div>
+                    <div className="flex items-center justify-center rounded-full w-14 h-14 bg-glass ">
+                      <img
+                        src={iconLocation}
+                        alt="Location Icon"
+                        className="w-8"
+                      />
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-end gap-3 mb-3 text-white">
+                    <div className="text-xl font-light">
+                      {mountainToDisplay.height} mdpl
+                    </div>
+                    <div className="flex items-center justify-center rounded-full w-14 h-14 bg-glass ">
+                      <img src={iconHeight} alt="Height Icon" className="w-8" />
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-end gap-3 mb-3 text-white">
+                    <div className="text-xl font-light">
+                      <ul className="text-end">
+                        {mountainToDisplay.track.length > 0 ? (
+                          mountainToDisplay.track.map((track, index) => (
+                            <li key={index}>{`Jalur ${track}`}</li>
+                          ))
+                        ) : (
+                          <li>Tidak ada jalur yang tersedia</li>
+                        )}
+                      </ul>
+                    </div>
+                    <div className="flex items-center justify-center rounded-full w-14 h-14 bg-glass ">
+                      <img src={iconRute} alt="Route Icon" className="w-6" />
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div className="flex flex-col basis-5/12">
-                <div className="flex items-center justify-end gap-3 mb-3 text-white">
-                  <div className="text-xl font-light">
-                    {mountainToDisplay.address}
-                  </div>
-                  <div className="flex items-center justify-center rounded-full w-14 h-14 bg-glass ">
-                    <img
-                      src={iconLocation}
-                      alt="Location Icon"
-                      className="w-8"
-                    />
-                  </div>
-                </div>
-                <div className="flex items-center justify-end gap-3 mb-3 text-white">
-                  <div className="text-xl font-light">
-                    {mountainToDisplay.height} mdpl
-                  </div>
-                  <div className="flex items-center justify-center rounded-full w-14 h-14 bg-glass ">
-                    <img src={iconHeight} alt="Height Icon" className="w-8" />
-                  </div>
-                </div>
-                <div className="flex items-center justify-end gap-3 mb-3 text-white">
-                  <div className="text-xl font-light">
-                    <ul className="text-end">
-                      {mountainToDisplay.track.length > 0 ? (
-                        mountainToDisplay.track.map((track, index) => (
-                          <li key={index}>{`Jalur ${track}`}</li>
-                        ))
-                      ) : (
-                        <li>Tidak ada jalur yang tersedia</li>
-                      )}
-                    </ul>
-                  </div>
-                  <div className="flex items-center justify-center rounded-full w-14 h-14 bg-glass ">
-                    <img src={iconRute} alt="Route Icon" className="w-6" />
+            )}
+          </div>
+
+          <section className="flex w-[80%] absolute gap-3 overflow-x-auto flex-nowrap bottom-10">
+            {datas.map((data, index) => (
+              <div
+                key={index}
+                className="w-full p-4 bg-glass hover:cursor-pointer rounded-xl group"
+                onClick={() => handleCardClick(data)}
+              >
+                <div className="relative overflow-hidden rounded-xl h-52">
+                  <img
+                    src={data.image}
+                    alt={`Gunung ${data.name}`}
+                    className="object-cover w-full h-full transition duration-500 ease-in-out rounded-md group-hover:scale-125 group-hover:rotate-6"
+                  />
+                  <div className="absolute bottom-0 left-0 right-0 w-full h-16 p-2 text-white">
+                    <h4 className="font-semibold">{data.name}</h4>
+                    <span className="text-xs">{data.height} mdpl</span> |{" "}
+                    <span className="text-xs">{data.trackCount} Jalur</span>
                   </div>
                 </div>
               </div>
-            </div>
-          )}
+            ))}
+          </section>
         </div>
+      </div>
 
-        <section className="flex w-[80%] absolute gap-3 overflow-x-auto flex-nowrap bottom-10">
-          {datas.map((data, index) => (
-            <div
-              key={index}
-              className="w-full p-4 bg-glass hover:cursor-pointer rounded-xl group"
-              onClick={() => handleCardClick(data)}
-            >
-              <div className="relative overflow-hidden rounded-xl h-52">
-                <img
-                  src={data.image}
-                  alt={`Gunung ${data.name}`}
-                  className="object-cover w-full h-full transition duration-500 ease-in-out rounded-md group-hover:scale-125 group-hover:rotate-6"
-                />
-                <div className="absolute bottom-0 left-0 right-0 w-full h-16 p-2 text-white">
-                  <h4 className="font-semibold">{data.name}</h4>
-                  <span className="text-xs">{data.height} mdpl</span> |{" "}
-                  <span className="text-xs">{data.trackCount} Jalur</span>
-                </div>
-              </div>
-            </div>
-          ))}
-        </section>
+      <div className="block lg:hidden">
+        <MountainPhone />
       </div>
     </main>
   );

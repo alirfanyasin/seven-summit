@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import semeruImg from "../../public/semeru.jpg";
 import arjunoImg from "../../public/arjuno.jpg";
 import raungImg from "../../public/raung.jpg";
@@ -6,27 +5,14 @@ import welirangImg from "../../public/welirang.jpg";
 import argopuroImg from "../../public/argopuro.jpeg";
 import lawuImg from "../../public/lawu.jpg";
 import butakImg from "../../public/butak.jpg";
+import iconLocation from "../../public/icon-location.png";
+import iconHeight from "../../public/icon-height.png";
+import iconRute from "../../public/icon-rute.png";
+import { useState } from "react";
 
-export default function MountainSection() {
-  const [hoveredCard, setHoveredCard] = useState(null);
-
-  const handleMouseEnter = (index) => {
-    setHoveredCard(index);
-  };
-
-  const handleMouseLeave = () => {
-    setHoveredCard(null);
-  };
-
-  const images = [
-    semeruImg,
-    arjunoImg,
-    raungImg,
-    welirangImg,
-    argopuroImg,
-    lawuImg,
-    butakImg,
-  ];
+export default function MountainPhone() {
+  const [bgClass, setBgClass] = useState("bg-heroImage2");
+  const [selectedMountain, setSelectedMountain] = useState(null);
 
   const datas = [
     {
@@ -121,61 +107,92 @@ export default function MountainSection() {
     },
   ];
 
+  const handleCardClick = (data) => {
+    setBgClass(data.bgClass);
+    setSelectedMountain(data);
+  };
+
+  const defaultMountain = datas[0];
+  const mountainToDisplay = selectedMountain || defaultMountain;
   return (
-    <section className="container">
-      <header className="text-center text-skyBlueColor">
-        <h2 className="mb-8 text-2xl font-bold lg:text-4xl">
-          Mulai Berpetualang
-        </h2>
-        <p className="text-sm font-light lg:text-xl">
-          Buat pengalaman baru dengan menjelajahi keindahan <br /> dari tujuh
-          gunung di Jawa Timur
-        </p>
-      </header>
+    <main className={`h-full bg-center bg-cover mb-10 ${bgClass}`}>
+      <div className="container flex flex-wrap items-center justify-center h-screen">
+        <header
+          className={`w-full text-center text-darkGreenColor ${
+            bgClass === "bg-heroImage2" ? "block" : "hidden"
+          }`}
+        >
+          <h1 className="mb-5 text-3xl font-bold capitalize">
+            7 Gunung Jawa Timur
+          </h1>
+          <p className="text-sm">
+            Mari jelajahi keindahan alam di Jawa Timur dengan menaklukkan 7
+            gunung bersama petualangan seru yang menanti di setiap langkahmu
+          </p>
+        </header>
 
-      <div className="hidden lg:block">
-        <div className="grid grid-cols-9 gap-4 mt-20">
-          {images.map((img, index) => {
-            const isHovered = hoveredCard === index;
-            const isFirstCard = index === 0;
+        <div className={bgClass !== "bg-heroImage2" ? "block" : "hidden"}>
+          {mountainToDisplay && (
+            <div>
+              <div className="text-left text-white">
+                <h1 className="mb-5 text-3xl font-semibold">
+                  Gunung {mountainToDisplay.name}
+                </h1>
+                <p className="font-light">{mountainToDisplay.description}</p>
+              </div>
 
-            return (
-              <div
-                key={index}
-                className={`transition-transform duration-500 ease-in-out transform ${
-                  isHovered
-                    ? "col-span-3 scale-110" // Scale up the hovered card
-                    : isFirstCard && hoveredCard !== null
-                    ? "col-span-1 scale-90" // Scale down the first card when another is hovered
-                    : isFirstCard
-                    ? "col-span-3" // Keep the first card at its original size
-                    : "col-span-1"
-                } card-mountain`}
-                style={{ minWidth: "120px" }} // Set a fixed minimum width for cards
-                onMouseEnter={() => handleMouseEnter(index)}
-                onMouseLeave={handleMouseLeave}
-              >
-                <div className="h-[30em] bg-red-300 rounded-xl overflow-hidden">
-                  <img
-                    src={img}
-                    alt={`Mountain ${index + 1}`}
-                    className="object-cover w-full h-full"
-                  />
+              <div className="mt-10">
+                <div className="flex items-center justify-start gap-2 mb-3 text-white">
+                  <div className="flex items-center justify-center w-10 h-10 rounded-full bg-glass ">
+                    <img
+                      src={iconLocation}
+                      alt="Location Icon"
+                      className="w-6"
+                    />
+                  </div>
+                  <div className="text-sm font-light">
+                    {mountainToDisplay.address}
+                  </div>
+                </div>
+                <div className="flex items-center justify-start gap-2 mb-3 text-white">
+                  <div className="flex items-center justify-center w-10 h-10 rounded-full bg-glass ">
+                    <img src={iconHeight} alt="Height Icon" className="w-6" />
+                  </div>
+                  <div className="text-sm font-light">
+                    {mountainToDisplay.height} mdpl
+                  </div>
+                </div>
+                <div className="flex items-center justify-start gap-2 mb-3 text-white">
+                  <div className="flex items-center justify-center w-10 h-10 rounded-full bg-glass ">
+                    <img src={iconRute} alt="Route Icon" className="w-5" />
+                  </div>
+                  <div className="text-sm font-light">
+                    <ul className="text-start">
+                      {mountainToDisplay.track.length > 0 ? (
+                        mountainToDisplay.track.map((track, index) => (
+                          <li key={index}>{`Jalur ${track}`}</li>
+                        ))
+                      ) : (
+                        <li>Tidak ada jalur yang tersedia</li>
+                      )}
+                    </ul>
+                  </div>
                 </div>
               </div>
-            );
-          })}
+            </div>
+          )}
         </div>
       </div>
 
-      <div className="block lg:hidden">
-        <div className="grid grid-cols-2 gap-2 mt-20">
+      <div className="container">
+        <section className="grid w-full grid-cols-2 gap-2">
           {datas.map((data, index) => (
             <div
               key={index}
               className={`w-full p-2 bg-glass hover:cursor-pointer card rounded-xl group ${
                 index === 0 ? "col-span-2" : ""
               }`}
+              onClick={() => handleCardClick(data)}
             >
               <div className="relative h-40 overflow-hidden rounded-xl">
                 <img
@@ -191,8 +208,8 @@ export default function MountainSection() {
               </div>
             </div>
           ))}
-        </div>
+        </section>
       </div>
-    </section>
+    </main>
   );
 }
