@@ -34,15 +34,6 @@ export default function HeroSection() {
     setMapMountain(event.target.value);
   };
 
-  // switch (description) {
-  //   case "":
-
-  //     break;
-
-  //   default:
-  //     break;
-  // }
-
   useEffect(() => {
     if (dataWeather && dataWeather.data && dataWeather.data.weather) {
       const weatherMain = dataWeather.data.weather[0].main;
@@ -73,6 +64,7 @@ export default function HeroSection() {
           break;
         case "Snow":
           setImageWeather(snowIcon);
+          setDescription("Dingin");
           break;
         case "Mist":
           setImageWeather(mistIcon);
