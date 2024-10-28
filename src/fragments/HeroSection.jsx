@@ -75,15 +75,8 @@ export default function HeroSection() {
   }, [dataWeather]);
 
   const handleSearchCity = () => {
-    const APIKey = "27d0745ee683a27f1b198bfd7d7c0683";
-
-    // `https://pro.openweathermap.org/data/2.5/forecast/hourly?q=${cityName}&appid=${APIKey}`
-    // `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${APIKey}`
-
     axios
-      .get(
-        `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${APIKey}`
-      )
+      .get()
       .then((response) => {
         setDataWeather(response);
       })
