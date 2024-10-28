@@ -75,8 +75,11 @@ export default function HeroSection() {
   }, [dataWeather]);
 
   const handleSearchCity = () => {
+    const APIKey = "27d0745ee683a27f1b198bfd7d7c0683";
     axios
-      .get()
+      .get(
+        `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${APIKey}`
+      )
       .then((response) => {
         setDataWeather(response);
       })
