@@ -1,8 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Navbar } from "../components/Navbar";
 import iconSearch from "../../public/icon-search.png";
 
 export default function Equipment() {
+  useEffect(() => {
+    window.HSStaticMethods.autoInit();
+  }, []);
   const [selectMountain, setSelectMountain] = useState(
     "https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d252837.18732145388!2d112.89465671660456!3d-8.042054528404378!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sperlengkapan%20pendakian%20semeru!5e0!3m2!1sid!2sid!4v1730120350827!5m2!1sid!2sid"
   );

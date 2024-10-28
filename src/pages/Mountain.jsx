@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Navbar } from "../components/Navbar";
 import semeruImg from "../../public/semeru.jpg";
 import arjunoImg from "../../public/arjuno.jpg";
@@ -112,6 +112,10 @@ export default function Mountain() {
     setBgClass(data.bgClass);
     setSelectedMountain(data); // Update selected mountain
   };
+
+  useEffect(() => {
+    window.HSStaticMethods.autoInit();
+  }, []);
 
   // Set default selected mountain to the first item if none is selected
   const defaultMountain = datas[0];
