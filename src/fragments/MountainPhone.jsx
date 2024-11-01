@@ -25,6 +25,7 @@ export default function MountainPhone() {
         "Gunung Semeru atau Gunung Meru adalah sebuah gunung berapi kerucut di Jawa Timur, Indonesia. Gunung Semeru merupakan gunung tertinggi di Pulau Jawa, dengan puncaknya Mahameru, 3.676 meter dari permukaan laut.",
       address: "Lumajang, Malang",
       track: ["Watu Rejeng", "Ranu Pane"],
+      file: "../../rute/semeru.pdf",
     },
     {
       name: "Arjuno",
@@ -36,6 +37,7 @@ export default function MountainPhone() {
         "Gunung Arjuno adalah sebuah gunung berapi kerucut di Jawa Timur, Indonesia dengan ketinggian 3.339 m dpl. Gunung Arjuno secara administratif terletak di perbatasan Kota Batu, Kabupaten Malang, dan Kabupaten Pasuruan dan berada di bawah pengelolaan Taman Hutan Raya Raden Soerjo",
       address: "Malang, Kota Batu, Pasuruan",
       track: ["Tretes", "Lawang", "Purwosari", "Batu"],
+      file: "../../rute/arjuno-welirang.pdf",
     },
     {
       name: "Raung",
@@ -47,6 +49,7 @@ export default function MountainPhone() {
         "Gunung Raung adalah gunung tertinggi ketiga di Jawa Timur setelah Gunung Semeru dan Arjuno. Di Pulau Jawa, gunung ini adalah yang tertinggi nomor empat. Gunung Raung memiliki empat puncak yaitu Puncak Bendera, Puncak 17, Puncak Tusuk Gigi dan Puncak Sejati.",
       address: "Banyuwangi, Bondowoso, Jember",
       track: ["Kalibaru", "Sumber Wringin", "Glenmore", "Jambewangi"],
+      file: "../../rute/raung.pdf",
     },
     {
       name: "Welirang",
@@ -66,6 +69,7 @@ export default function MountainPhone() {
         "Sumberawan",
         "Purwosari",
       ],
+      file: "../../rute/arjuno-welirang.pdf",
     },
     {
       name: "Argopuro",
@@ -77,6 +81,7 @@ export default function MountainPhone() {
         "Gunung Argapura (sering dieja Gunung Argopuro) adalah sebuah gunung berapi kompleks yang terdapat di Jawa Timur, Indonesia. Gunung Argapura mempunyai ketinggian setinggi 3.088 meter. Gunung Argapura merupakan bekas gunung berapi yang kini sudah tidak aktif lagi. Puncak Gunung Argapura adalah titik tertinggi di Pegunungan Iyang.",
       address: "Probolinggo, Situbondo, Bondowoso",
       track: ["Bremi", "Baderan"],
+      file: "../../rute/argopuro.pdf",
     },
     {
       name: "Lawu",
@@ -88,6 +93,7 @@ export default function MountainPhone() {
         "Gunung Lawu adalah sebuah gunung berapi aktif yang terletak di Pulau Jawa, tepatnya di perbatasan Jawa Tengah dan Jawa Timur, Indonesia. Gunung Lawu memiliki ketinggian sekitar 3.265 mdpl. Gunung Lawu terletak di antara tiga kabupaten, yaitu Karanganyar di Jawa Tengah, Ngawi, dan Magetan di Jawa Timur. Status gunung ini adalah gunung api, yang diperkirakan terakhir meletus pada tanggal 28 November 1885 dan telah lama tidak aktif",
       address: "Karanganyar, Magetan",
       track: ["Cemoro Sewu", "Cemoro Kandang", "Candi Cetho", "Singolangu"],
+      file: "../../rute/lawu.pdf",
     },
     {
       name: "Butak",
@@ -104,6 +110,7 @@ export default function MountainPhone() {
         "Desa Gadingkulon-Dau-Malang",
         "Gunung Panderman, Batu",
       ],
+      file: "../../rute/butak.pdf",
     },
   ];
 
@@ -178,6 +185,16 @@ export default function MountainPhone() {
                     </ul>
                   </div>
                 </div>
+              </div>
+
+              <div className="mt-10">
+                <a
+                  href={mountainToDisplay.file}
+                  className="inline-block px-5 py-2 text-sm font-semibold text-black bg-white rounded-md"
+                  download
+                >
+                  Download Jalur
+                </a>
               </div>
             </div>
           )}
