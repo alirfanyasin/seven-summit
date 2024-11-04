@@ -7,6 +7,12 @@
   font-family: "Poppins", sans-serif;
 }
 
+@layer utilities {
+  .paused {
+    animation-play-state: paused;
+  }
+}
+
 /* Custom Background */
 .navbar-solid {
   background: rgba(255, 255, 255, 0.05);

@@ -14,6 +14,7 @@ export default {
       heroImage: "url('/hero-image.png')",
       heroImage2: "url('/hero-image2.png')",
       heroImage3: "url('/hero-image3.png')",
+      heroImage4: "url('/bg-community.png')",
       pattern: "url('/pattern.png')",
       footerImage: "url('/footer.png')",
       logo: "url('/logo.png')",
@@ -30,6 +31,20 @@ export default {
       colors: {
         skyBlueColor: "#9AB7DA",
         darkGreenColor: "#4A7185",
+      },
+      animation: {
+        "loop-scroll": "loop-scroll 20s linear infinite",
+        // "loop-scroll-back": "loop-scroll-back 20s linear infinite",
+      },
+      keyframes: {
+        "loop-scroll": {
+          from: { transform: "translateY(0)" },
+          to: { transform: "translateY(-100%)" },
+        },
+        // "loop-scroll-back": {
+        //   from: { transform: "translateY(-0)" },
+        //   to: { transform: "translateY(100%)" },
+        // },
       },
     },
   },

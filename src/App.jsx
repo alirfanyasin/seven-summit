@@ -1,8 +1,10 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { useEffect } from "react";
+
 import Home from "./pages/Home";
 import Mountain from "./pages/Mountain.jsx";
 import Equipment from "./pages/Equipment.jsx";
-import { useEffect } from "react";
+import Community from "./pages/Community.jsx";
 
 const router = createBrowserRouter([
   {
@@ -16,6 +18,10 @@ const router = createBrowserRouter([
   {
     path: "/perlengkapan",
     element: <Equipment />,
+  },
+  {
+    path: "/komunitas",
+    element: <Community />,
   },
 ]);
 

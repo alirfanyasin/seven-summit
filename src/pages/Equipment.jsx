@@ -23,7 +23,7 @@ export default function Equipment() {
           <div className="w-full text-center">
             <header className="mb-20 text-white">
               <h1 className="mb-4 text-3xl font-bold lg:text-5xl md:text-4xl">
-                Perlengkapan Pendakian
+                Perlengkapan & Peralatan <br /> Pendakian
               </h1>
               <p className="font-light">
                 Cari perlengkapan pendakian di kota terdekat

@@ -101,6 +101,12 @@ export const Navbar = () => {
             >
               Perlengkapan
             </Link>
+            <Link
+              className="font-medium text-white hover:text-gray-400 focus:outline-none focus:text-gray-400"
+              to={"/komunitas"}
+            >
+              Komunitas
+            </Link>
           </div>
         </div>
       </nav>
