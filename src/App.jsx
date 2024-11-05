@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Mountain from "./pages/Mountain.jsx";
 import Equipment from "./pages/Equipment.jsx";
 import Community from "./pages/Community.jsx";
+import Tips from "./pages/Tips.jsx";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
   {
     path: "/perlengkapan",
     element: <Equipment />,
+  },
+  {
+    path: "/tips",
+    element: <Tips />,
   },
   {
     path: "/komunitas",

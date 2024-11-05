@@ -103,6 +103,12 @@ export const Navbar = () => {
             </Link>
             <Link
               className="font-medium text-white hover:text-gray-400 focus:outline-none focus:text-gray-400"
+              to={"/tips"}
+            >
+              Tips
+            </Link>
+            <Link
+              className="font-medium text-white hover:text-gray-400 focus:outline-none focus:text-gray-400"
               to={"/komunitas"}
             >
               Komunitas

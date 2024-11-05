@@ -15,6 +15,7 @@ export default {
       heroImage2: "url('/hero-image2.png')",
       heroImage3: "url('/hero-image3.png')",
       heroImage4: "url('/bg-community.png')",
+      heroImage5: "url('/bg-tips.png')",
       pattern: "url('/pattern.png')",
       footerImage: "url('/footer.png')",
       logo: "url('/logo.png')",
