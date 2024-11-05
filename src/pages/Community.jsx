@@ -20,10 +20,11 @@ export default function Community() {
         <Navbar />
 
         <div className="container flex items-center justify-between h-screen gap-4">
-          <div className="text-white transition-all basis-6/12">
+          <div className="text-white transition-all md:basis-6/12 basis-full">
             <h1 className="text-5xl font-bold">Komunitas</h1>
             <p className="mt-5 font-light">
-              Ceritakan pengalaman seru Anda selama pendakian! Bagikan <br />
+              Ceritakan pengalaman seru Anda selama pendakian! Bagikan{" "}
+              <br className="hidden md:block" />
               momen-momen menantang, pemandangan indah yang tak terlupakan.
             </p>
             <div className="flex items-center justify-start mt-5">
@@ -58,7 +59,7 @@ export default function Community() {
               />
             </div>
           </div>
-          <div className="flex items-center h-[80%] gap-2 basis-4/12 ">
+          <div className="md:flex items-center h-[80%] gap-2 md:basis-4/12  hidden">
             <div className="h-full overflow-hidden group">
               <div className="space-y-3 animate-loop-scroll group-hover:paused">
                 <div className="p-5 text-white bg-glass rounded-xl">

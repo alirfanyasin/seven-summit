@@ -6,6 +6,7 @@ import Mountain from "./pages/Mountain.jsx";
 import Equipment from "./pages/Equipment.jsx";
 import Community from "./pages/Community.jsx";
 import Tips from "./pages/Tips.jsx";
+import TipsDetail from "./pages/TipsDetail.jsx";
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
   {
     path: "/tips",
     element: <Tips />,
+  },
+  {
+    path: "/tips/:id",
+    element: <TipsDetail />,
   },
   {
     path: "/komunitas",

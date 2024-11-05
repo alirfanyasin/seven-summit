@@ -20,6 +20,7 @@ export default function Tips() {
 
   const datas = [
     {
+      id: 1,
       title: "Tips Pendakian Bagi Pemula",
       description:
         "Panduan lengkap untuk pendaki pemula, mulai dari persiapan fisik hingga mental yang dibutuhkan saat mendaki.",
@@ -28,6 +29,7 @@ export default function Tips() {
       level: "pemula",
     },
     {
+      id: 2,
       title: "Mengenal Perlengkapan Dasar Pendakian",
       description:
         "Perlengkapan wajib untuk pendaki pemula yang ingin mendaki dengan aman dan nyaman.",
@@ -36,6 +38,7 @@ export default function Tips() {
       level: "pemula",
     },
     {
+      id: 3,
       title: "Cara Mengatur Waktu dan Jadwal Pendakian",
       description:
         "Kiat penting mengatur jadwal pendakian agar perjalanan lancar dan aman bagi pemula.",
@@ -44,6 +47,7 @@ export default function Tips() {
       level: "pemula",
     },
     {
+      id: 4,
       title: "Memilih Sepatu Pendakian yang Tepat",
       description:
         "Langkah-langkah memilih sepatu pendakian yang sesuai dengan medan dan tingkat kenyamanan.",
@@ -52,6 +56,7 @@ export default function Tips() {
       level: "menengah",
     },
     {
+      id: 5,
       title: "Strategi Bertahan di Cuaca Ekstrem",
       description:
         "Panduan menghadapi cuaca ekstrem saat pendakian, termasuk tips bertahan dalam suhu rendah.",
@@ -60,6 +65,7 @@ export default function Tips() {
       level: "menengah",
     },
     {
+      id: 6,
       title: "Panduan Navigasi dan Membaca Peta",
       description:
         "Cara membaca peta dan kompas untuk pendaki tingkat menengah yang ingin mandiri di jalur pendakian.",
@@ -68,6 +74,7 @@ export default function Tips() {
       level: "menengah",
     },
     {
+      id: 7,
       title: "Teknik Survival di Gunung",
       description:
         "Kemampuan survival dasar dan lanjutan untuk menghadapi situasi darurat saat mendaki gunung.",
@@ -76,6 +83,7 @@ export default function Tips() {
       level: "profesional",
     },
     {
+      id: 8,
       title: "Penyusunan Perlengkapan untuk Ekspedisi Panjang",
       description:
         "Tips packing dan manajemen perlengkapan untuk ekspedisi pendakian panjang atau berhari-hari.",
@@ -84,6 +92,7 @@ export default function Tips() {
       level: "profesional",
     },
     {
+      id: 9,
       title: "Memilih Jalur Pendakian Ekstrem untuk Pendaki Profesional",
       description:
         "Rekomendasi jalur pendakian ekstrem dan tantangan yang cocok untuk pendaki profesional.",
@@ -92,6 +101,7 @@ export default function Tips() {
       level: "profesional",
     },
     {
+      id: 10,
       title: "Mengelola Risiko dan Keamanan Saat Pendakian Solo",
       description:
         "Panduan lengkap tentang manajemen risiko dan keamanan saat melakukan pendakian solo.",
@@ -145,7 +155,7 @@ export default function Tips() {
             .filter((data) => filter === "semua" || data.level === filter)
             .map((data, index) => (
               <a
-                href=""
+                href={`tips/${data.id}`}
                 className="block p-3 card bg-glass rounded-xl group"
                 key={index}
               >
