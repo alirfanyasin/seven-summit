@@ -4,7 +4,7 @@ export default function Footer() {
       <div className="container flex items-center justify-center h-screen text-white">
         <div className="w-full text-center">
           <h1 className="mb-5 text-4xl font-bold md:text-5xl lg:text-6xl">
-            Subscribe
+            Ikuti Kami
           </h1>
           <p className="text-sm font-light md:text-base">
             Lihat informasi lebih lengkap dengan mengikuti <br />
@@ -21,7 +21,7 @@ export default function Footer() {
                 placeholder="Masukkan alamat email"
               />
               <button className="flex items-center justify-center h-10 text-sm font-semibold text-black bg-white rounded-md lg:text-base basis-3/12">
-                Subscribe
+                Kirim
               </button>
             </div>
           </form>

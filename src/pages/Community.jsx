@@ -1,19 +1,56 @@
 import { Navbar } from "../components/Navbar";
+import discordIcon from "../../public/icon-discord.png";
+import qrIcon from "../../public/icon-qr.png";
+import { useState } from "react";
 
 export default function Community() {
+  const [qr, setQr] = useState("hidden");
+
+  const handleQr = () => {
+    if (qr === "block") {
+      setQr("hidden");
+    } else {
+      setQr("block");
+    }
+  };
+
   return (
     <div className="bg-[#040A16]">
       <section className="h-screen bg-center bg-cover bg-heroImage4">
         <Navbar />
 
         <div className="container flex items-center justify-between h-screen gap-4">
-          <div className="text-white basis-6/12">
+          <div className="text-white transition-all basis-6/12">
             <h1 className="text-5xl font-bold">Komunitas</h1>
             <p className="mt-5 font-light">
               Ceritakan pengalaman seru Anda selama pendakian! Bagikan <br />
               momen-momen menantang, pemandangan indah yang tak terlupakan.
             </p>
-            <div className="mt-5 overflow-hidden w-36 rounded-xl">
+            <div className="flex items-center justify-start mt-5">
+              <a
+                href=""
+                target="_blank"
+                className="inline-block px-5 py-3 font-semibold text-white rounded-md bg-glass"
+              >
+                <div className="flex items-center justify-center">
+                  <img src={discordIcon} className="w-6 me-3" alt="" />
+                  <span>Gabung Komunitas</span>
+                </div>
+              </a>
+
+              <button className="inline-block p-3 rounded-md bg-glass ms-2">
+                <img
+                  src={qrIcon}
+                  alt=""
+                  className="w-6"
+                  onClick={() => handleQr()}
+                />
+              </button>
+            </div>
+
+            <div
+              className={`mt-5 overflow-hidden w-36 rounded-xl transition ${qr}`}
+            >
               <img
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTW-Q-OuJRKEGLFM0nFq5o9Q596vBQheogFQxHoiRWz2PqJonxLsSDfEoJZ09wszZzSRLk&usqp=CAU"
                 alt=""
