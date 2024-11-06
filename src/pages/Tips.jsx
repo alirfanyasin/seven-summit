@@ -9,10 +9,15 @@ import img7 from "../../public/img-7.jpg";
 import img8 from "../../public/img-8.jpg";
 import img9 from "../../public/img-9.jpg";
 import img10 from "../../public/img-10.jpg";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Tips() {
   const [filter, setFilter] = useState("semua");
+
+  useEffect(() => {
+    console.log("ok");
+    window.HSStaticMethods.autoInit();
+  }, []);
 
   const handleFilter = (e) => {
     setFilter(e.target.value);

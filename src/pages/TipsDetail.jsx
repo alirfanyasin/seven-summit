@@ -11,6 +11,7 @@ import img8 from "../../public/img-8.jpg";
 import img9 from "../../public/img-9.jpg";
 import img10 from "../../public/img-10.jpg";
 import iconArrow from "../../public/icon-arrow.png";
+import { useEffect } from "react";
 
 const datas = [
   {
@@ -113,7 +114,10 @@ export default function TipsDetail() {
   if (!data) {
     return <p className="text-white">Data tidak ditemukan</p>;
   }
-
+  useEffect(() => {
+    console.log("ok");
+    window.HSStaticMethods.autoInit();
+  }, []);
   return (
     <div className="bg-[#050902] h-full pb-16">
       <Navbar />
