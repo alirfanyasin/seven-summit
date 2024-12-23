@@ -19,13 +19,13 @@ export default {
       pattern: "url('/pattern.png')",
       footerImage: "url('/footer.png')",
       logo: "url('/logo.png')",
-      lawuBg: "url('/lawu.jpg')",
+      lawuBg: "url('/mountain/Lawu/img-2.jpg')",
       semeruBg: "url('/semeru.jpg')",
-      arjunoBg: "url('/arjuno.jpg')",
+      arjunoBg: "url('/mountain/Arjuno/img-3.jpg')",
       raungBg: "url('/raung.jpg')",
-      welirangBg: "url('/welirang.jpg')",
+      welirangBg: "url('/mountain/Welirang/img-1.jpg')",
       butakBg: "url('/butak.jpg')",
-      argopuroBg: "url('/argopuro.jpeg')",
+      argopuroBg: "url('/mountain/Argopuro/img-2.jpg')",
     },
 
     extend: {

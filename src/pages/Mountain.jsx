@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Navbar } from "../components/Navbar";
 import semeruImg from "../../public/semeru.jpg";
-import arjunoImg from "../../public/arjuno.jpg";
+import arjunoImg from "../../public/mountain/Arjuno/img-3.jpg";
 import raungImg from "../../public/raung.jpg";
-import welirangImg from "../../public/welirang.jpg";
-import argopuroImg from "../../public/argopuro.jpeg";
-import lawuImg from "../../public/lawu.jpg";
+import welirangImg from "../../public/mountain/Welirang/img-1.jpg";
+import argopuroImg from "../../public/mountain/Argopuro/img-2.jpg";
+import lawuImg from "../../public/mountain/Lawu/img-2.jpg";
 import butakImg from "../../public/butak.jpg";
 import iconLocation from "../../public/icon-location.png";
 import iconHeight from "../../public/icon-height.png";
@@ -96,7 +96,7 @@ export default function Mountain() {
       image: lawuImg,
       bgClass: "bg-lawuBg",
       description:
-        "Gunung Lawu adalah sebuah gunung berapi aktif yang terletak di Pulau Jawa, tepatnya di perbatasan Jawa Tengah dan Jawa Timur, Indonesia. Gunung Lawu memiliki ketinggian sekitar 3.265 mdpl. Gunung Lawu terletak di antara tiga kabupaten, yaitu Karanganyar di Jawa Tengah, Ngawi, dan Magetan di Jawa Timur. Status gunung ini adalah gunung api, yang diperkirakan terakhir meletus pada tanggal 28 November 1885 dan telah lama tidak aktif",
+        "Gunung Lawu adalah sebuah gunung berapi aktif yang terletak di Pulau Jawa, tepatnya di perbatasan Jawa Tengah dan Jawa Timur, Indonesia. Gunung Lawu memiliki ketinggian sekitar 3.265 mdpl. Gunung Lawu terletak di antara tiga kabupaten, yaitu Karanganyar di Jawa Tengah, Ngawi, dan Magetan di Jawa Timur.",
       address: "Karanganyar, Magetan",
       track: ["Cemoro Sewu", "Cemoro Kandang", "Candi Cetho", "Singolangu"],
       file: "../../rute/lawu.pdf",
@@ -153,7 +153,7 @@ export default function Mountain() {
             {mountainToDisplay && (
               <div className="flex items-center justify-between gap-6 mb-52">
                 <div className="text-white basis-7/12">
-                  <h1 className="text-6xl font-bold">
+                  <h1 className="text-5xl font-bold">
                     Gunung {mountainToDisplay.name}
                   </h1>
                   <p className="mt-5 text-xl font-light">

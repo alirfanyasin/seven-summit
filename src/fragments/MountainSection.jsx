@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import semeruImg from "../../public/semeru.jpg";
-import arjunoImg from "../../public/arjuno.jpg";
+import arjunoImg from "../../public/mountain/Arjuno/img-3.jpg";
 import raungImg from "../../public/raung.jpg";
-import welirangImg from "../../public/welirang.jpg";
-import argopuroImg from "../../public/argopuro.jpeg";
-import lawuImg from "../../public/lawu.jpg";
+import welirangImg from "../../public/mountain/Welirang/img-1.jpg";
+import argopuroImg from "../../public/mountain/Argopuro/img-2.jpg";
+import lawuImg from "../../public/mountain/Lawu/img-2.jpg";
 import butakImg from "../../public/butak.jpg";
 
 export default function MountainSection() {
@@ -151,11 +151,10 @@ export default function MountainSection() {
                     ? "col-span-3" // Keep the first card at its original size
                     : "col-span-1"
                 } card-mountain`}
-                style={{ minWidth: "120px" }} // Set a fixed minimum width for cards
                 onMouseEnter={() => handleMouseEnter(index)}
                 onMouseLeave={handleMouseLeave}
               >
-                <div className="h-[30em] bg-red-300 rounded-xl overflow-hidden">
+                <div className="h-[30em] rounded-xl w-full overflow-hidden">
                   <img
                     src={img}
                     alt={`Mountain ${index + 1}`}
