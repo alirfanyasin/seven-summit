@@ -1,6 +1,7 @@
 import { Navbar } from "../components/Navbar";
 import discordIcon from "../../public/icon-discord.png";
 import qrIcon from "../../public/icon-qr.png";
+import qrCode from "../../public/qr-code.png";
 import { useState } from "react";
 
 export default function Community() {
@@ -29,7 +30,7 @@ export default function Community() {
             </p>
             <div className="flex items-center justify-start mt-5">
               <a
-                href=""
+                href="https://discord.gg/5m2p2NnY"
                 target="_blank"
                 className="inline-block px-5 py-3 font-semibold text-white rounded-md bg-glass"
               >
@@ -52,11 +53,7 @@ export default function Community() {
             <div
               className={`mt-5 overflow-hidden w-36 rounded-xl transition ${qr}`}
             >
-              <img
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTW-Q-OuJRKEGLFM0nFq5o9Q596vBQheogFQxHoiRWz2PqJonxLsSDfEoJZ09wszZzSRLk&usqp=CAU"
-                alt=""
-                className="object-cover w-full h-full"
-              />
+              <img src={qrCode} alt="" className="object-cover w-full h-full" />
             </div>
           </div>
           <div className="md:flex items-center h-[80%] gap-2 md:basis-4/12  hidden">
