@@ -108,7 +108,7 @@ export default function HeroSection() {
       <div className="container flex items-center justify-center h-screen ">
         <div className="mt-32 text-center text-white">
           <h1 className="text-4xl font-bold lg:text-7xl md:text-5xl">
-            Nikmati Seven Summit <br /> di Jawa Timur
+            Katalog Seven Summit <br /> di Jawa Timur
           </h1>
           <p className="mt-10 text-sm font-light lg:text-2xl md:text-xl">
             Nikmati pengalaman mendaki tujuh puncak tertinggi di Jawa Timur{" "}

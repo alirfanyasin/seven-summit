@@ -1,4 +1,5 @@
-import rute from "../../public/rute.png";
+// import rute from "../../public/rute.png";
+import rute from "../../public/peta-jawa-timur.png";
 export default function AboutSection() {
   return (
     <>

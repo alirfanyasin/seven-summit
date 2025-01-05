@@ -32,6 +32,7 @@ export default function Mountain() {
       address: "Lumajang, Malang",
       track: ["Watu Rejeng", "Ranu Pane"],
       file: "../../rute/semeru.pdf",
+      linkRegistration: "https://bookingsemeru.bromotenggersemeru.org",
     },
     {
       name: "Arjuno",
@@ -44,6 +45,7 @@ export default function Mountain() {
       address: "Malang, Kota Batu, Pasuruan",
       track: ["Tretes", "Lawang", "Purwosari", "Batu"],
       file: "../../rute/arjuno-welirang.pdf",
+      linkRegistration: "https://tahurarsoerjo.dishut.jatimprov.go.id",
     },
     {
       name: "Raung",
@@ -56,6 +58,7 @@ export default function Mountain() {
       address: "Banyuwangi, Bondowoso, Jember",
       track: ["Kalibaru", "Sumber Wringin", "Glenmore", "Jambewangi"],
       file: "../../rute/raung.pdf",
+      linkRegistration: "https://www.instagram.com/raungcamp",
     },
     {
       name: "Welirang",
@@ -76,6 +79,7 @@ export default function Mountain() {
         "Purwosari",
       ],
       file: "../../rute/arjuno-welirang.pdf",
+      linkRegistration: "https://tahurarsoerjo.dishut.jatimprov.go.id",
     },
     {
       name: "Argopuro",
@@ -88,6 +92,7 @@ export default function Mountain() {
       address: "Probolinggo, Situbondo, Bondowoso",
       track: ["Bremi", "Baderan"],
       file: "../../rute/argopuro.pdf",
+      linkRegistration: "https://www.tiket.bbksdajatim.org",
     },
     {
       name: "Lawu",
@@ -100,6 +105,7 @@ export default function Mountain() {
       address: "Karanganyar, Magetan",
       track: ["Cemoro Sewu", "Cemoro Kandang", "Candi Cetho", "Singolangu"],
       file: "../../rute/lawu.pdf",
+      linkRegistration: "",
     },
     {
       name: "Butak",
@@ -117,6 +123,7 @@ export default function Mountain() {
         "Gunung Panderman, Batu",
       ],
       file: "../../rute/butak.pdf",
+      linkRegistration: "http://www.tiketpendakian.com",
     },
   ];
 
@@ -153,25 +160,35 @@ export default function Mountain() {
             {mountainToDisplay && (
               <div className="flex items-center justify-between gap-6 mb-52">
                 <div className="text-white basis-7/12">
-                  <h1 className="text-5xl font-bold">
+                  <h1 className="text-4xl font-bold">
                     Gunung {mountainToDisplay.name}
                   </h1>
-                  <p className="mt-5 text-xl font-light">
+                  <p className="mt-5 font-light text-md">
                     {mountainToDisplay.description}
                   </p>
                   <div className="mt-5">
                     <a
                       href={mountainToDisplay.file}
-                      className="inline-block py-2 font-semibold text-black bg-white rounded-md px-7"
+                      className="inline-block py-2 font-semibold text-white rounded-md bg-glass text-md px-7 hover:bg-white hover:text-black"
                       download
                     >
                       Download Jalur
+                    </a>
+
+                    <a
+                      href={mountainToDisplay.linkRegistration}
+                      className="inline-block py-2 font-semibold text-white rounded-md bg-glass ms-2 text-md px-7 hover:bg-white hover:text-black"
+                      target="_blank"
+                    >
+                      {mountainToDisplay.name === "Lawu"
+                        ? "Registrasi Offline"
+                        : "Registrasi Online"}
                     </a>
                   </div>
                 </div>
                 <div className="flex flex-col basis-5/12">
                   <div className="flex items-center justify-end gap-3 mb-3 text-white">
-                    <div className="text-xl font-light">
+                    <div className="font-light text-md">
                       {mountainToDisplay.address}
                     </div>
                     <div className="flex items-center justify-center rounded-full w-14 h-14 bg-glass ">
@@ -183,7 +200,7 @@ export default function Mountain() {
                     </div>
                   </div>
                   <div className="flex items-center justify-end gap-3 mb-3 text-white">
-                    <div className="text-xl font-light">
+                    <div className="font-light text-md">
                       {mountainToDisplay.height} mdpl
                     </div>
                     <div className="flex items-center justify-center rounded-full w-14 h-14 bg-glass ">
@@ -191,7 +208,7 @@ export default function Mountain() {
                     </div>
                   </div>
                   <div className="flex items-center justify-end gap-3 mb-3 text-white">
-                    <div className="text-xl font-light">
+                    <div className="font-light text-md">
                       <ul className="text-end">
                         {mountainToDisplay.track.length > 0 ? (
                           mountainToDisplay.track.map((track, index) => (

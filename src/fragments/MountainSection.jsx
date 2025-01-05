@@ -39,6 +39,8 @@ export default function MountainSection() {
         "Gunung Semeru atau Gunung Meru adalah sebuah gunung berapi kerucut di Jawa Timur, Indonesia. Gunung Semeru merupakan gunung tertinggi di Pulau Jawa, dengan puncaknya Mahameru, 3.676 meter dari permukaan laut.",
       address: "Lumajang, Malang",
       track: ["Watu Rejeng", "Ranu Pane"],
+      file: "../../rute/semeru.pdf",
+      linkRegistration: "https://bookingsemeru.bromotenggersemeru.org",
     },
     {
       name: "Arjuno",
@@ -50,6 +52,8 @@ export default function MountainSection() {
         "Gunung Arjuno adalah sebuah gunung berapi kerucut di Jawa Timur, Indonesia dengan ketinggian 3.339 m dpl. Gunung Arjuno secara administratif terletak di perbatasan Kota Batu, Kabupaten Malang, dan Kabupaten Pasuruan dan berada di bawah pengelolaan Taman Hutan Raya Raden Soerjo",
       address: "Malang, Kota Batu, Pasuruan",
       track: ["Tretes", "Lawang", "Purwosari", "Batu"],
+      file: "../../rute/arjuno-welirang.pdf",
+      linkRegistration: "https://tahurarsoerjo.dishut.jatimprov.go.id",
     },
     {
       name: "Raung",
@@ -61,6 +65,8 @@ export default function MountainSection() {
         "Gunung Raung adalah gunung tertinggi ketiga di Jawa Timur setelah Gunung Semeru dan Arjuno. Di Pulau Jawa, gunung ini adalah yang tertinggi nomor empat. Gunung Raung memiliki empat puncak yaitu Puncak Bendera, Puncak 17, Puncak Tusuk Gigi dan Puncak Sejati.",
       address: "Banyuwangi, Bondowoso, Jember",
       track: ["Kalibaru", "Sumber Wringin", "Glenmore", "Jambewangi"],
+      file: "../../rute/raung.pdf",
+      linkRegistration: "https://www.instagram.com/raungcamp",
     },
     {
       name: "Welirang",
@@ -80,6 +86,8 @@ export default function MountainSection() {
         "Sumberawan",
         "Purwosari",
       ],
+      file: "../../rute/arjuno-welirang.pdf",
+      linkRegistration: "https://tahurarsoerjo.dishut.jatimprov.go.id",
     },
     {
       name: "Argopuro",
@@ -91,6 +99,8 @@ export default function MountainSection() {
         "Gunung Argapura (sering dieja Gunung Argopuro) adalah sebuah gunung berapi kompleks yang terdapat di Jawa Timur, Indonesia. Gunung Argapura mempunyai ketinggian setinggi 3.088 meter. Gunung Argapura merupakan bekas gunung berapi yang kini sudah tidak aktif lagi. Puncak Gunung Argapura adalah titik tertinggi di Pegunungan Iyang.",
       address: "Probolinggo, Situbondo, Bondowoso",
       track: ["Bremi", "Baderan"],
+      file: "../../rute/argopuro.pdf",
+      linkRegistration: "https://www.tiket.bbksdajatim.org",
     },
     {
       name: "Lawu",
@@ -99,9 +109,11 @@ export default function MountainSection() {
       image: lawuImg,
       bgClass: "bg-lawuBg",
       description:
-        "Gunung Lawu adalah sebuah gunung berapi aktif yang terletak di Pulau Jawa, tepatnya di perbatasan Jawa Tengah dan Jawa Timur, Indonesia. Gunung Lawu memiliki ketinggian sekitar 3.265 mdpl. Gunung Lawu terletak di antara tiga kabupaten, yaitu Karanganyar di Jawa Tengah, Ngawi, dan Magetan di Jawa Timur. Status gunung ini adalah gunung api, yang diperkirakan terakhir meletus pada tanggal 28 November 1885 dan telah lama tidak aktif",
+        "Gunung Lawu adalah sebuah gunung berapi aktif yang terletak di Pulau Jawa, tepatnya di perbatasan Jawa Tengah dan Jawa Timur, Indonesia. Gunung Lawu memiliki ketinggian sekitar 3.265 mdpl. Gunung Lawu terletak di antara tiga kabupaten, yaitu Karanganyar di Jawa Tengah, Ngawi, dan Magetan di Jawa Timur.",
       address: "Karanganyar, Magetan",
       track: ["Cemoro Sewu", "Cemoro Kandang", "Candi Cetho", "Singolangu"],
+      file: "../../rute/lawu.pdf",
+      linkRegistration: "",
     },
     {
       name: "Butak",
@@ -118,6 +130,8 @@ export default function MountainSection() {
         "Desa Gadingkulon-Dau-Malang",
         "Gunung Panderman, Batu",
       ],
+      file: "../../rute/butak.pdf",
+      linkRegistration: "http://www.tiketpendakian.com",
     },
   ];
 
@@ -136,30 +150,44 @@ export default function MountainSection() {
       <div className="hidden lg:block">
         <div className="grid grid-cols-9 gap-4 mt-20">
           {images.map((img, index) => {
-            const isHovered = hoveredCard === index;
-            const isFirstCard = index === 0;
+            const isHovered = hoveredCard === index; // Apakah kartu ini di-hover
+            const isFirstCard = index === 0; // Apakah ini adalah kartu pertama
 
             return (
               <div
                 key={index}
                 className={`transition-transform duration-500 ease-in-out transform ${
                   isHovered
-                    ? "col-span-3 scale-110" // Scale up the hovered card
+                    ? "col-span-3 scale-110" // Perbesar kartu yang di-hover
                     : isFirstCard && hoveredCard !== null
-                    ? "col-span-1 scale-90" // Scale down the first card when another is hovered
+                    ? "col-span-1 scale-90" // Perkecil kartu pertama saat kartu lain di-hover
                     : isFirstCard
-                    ? "col-span-3" // Keep the first card at its original size
-                    : "col-span-1"
+                    ? "col-span-3" // Biarkan kartu pertama besar jika tidak ada hover
+                    : "col-span-1" // Kartu lainnya kecil secara default
                 } card-mountain`}
                 onMouseEnter={() => handleMouseEnter(index)}
                 onMouseLeave={handleMouseLeave}
               >
-                <div className="h-[30em] rounded-xl w-full overflow-hidden">
+                <div className="h-[30em] rounded-xl w-full overflow-hidden relative">
                   <img
                     src={img}
                     alt={`Mountain ${index + 1}`}
                     className="object-cover w-full h-full"
                   />
+                  {isHovered || (isFirstCard && hoveredCard === null) ? (
+                    <div className="absolute bottom-0 left-0 right-0 w-full h-20 p-4 text-white bg-gradient-to-t from-black to-transparent">
+                      <h4 className="font-semibold">
+                        Gunung {datas[index].name}
+                      </h4>
+                      <span className="text-xs">
+                        {datas[index].height} mdpl
+                      </span>{" "}
+                      |{" "}
+                      <span className="text-xs">
+                        {datas[index].trackCount} Jalur
+                      </span>
+                    </div>
+                  ) : null}
                 </div>
               </div>
             );

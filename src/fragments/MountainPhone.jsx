@@ -26,6 +26,7 @@ export default function MountainPhone() {
       address: "Lumajang, Malang",
       track: ["Watu Rejeng", "Ranu Pane"],
       file: "../../rute/semeru.pdf",
+      linkRegistration: "https://bookingsemeru.bromotenggersemeru.org",
     },
     {
       name: "Arjuno",
@@ -38,6 +39,7 @@ export default function MountainPhone() {
       address: "Malang, Kota Batu, Pasuruan",
       track: ["Tretes", "Lawang", "Purwosari", "Batu"],
       file: "../../rute/arjuno-welirang.pdf",
+      linkRegistration: "https://tahurarsoerjo.dishut.jatimprov.go.id",
     },
     {
       name: "Raung",
@@ -50,6 +52,7 @@ export default function MountainPhone() {
       address: "Banyuwangi, Bondowoso, Jember",
       track: ["Kalibaru", "Sumber Wringin", "Glenmore", "Jambewangi"],
       file: "../../rute/raung.pdf",
+      linkRegistration: "https://www.instagram.com/raungcamp",
     },
     {
       name: "Welirang",
@@ -70,6 +73,7 @@ export default function MountainPhone() {
         "Purwosari",
       ],
       file: "../../rute/arjuno-welirang.pdf",
+      linkRegistration: "https://tahurarsoerjo.dishut.jatimprov.go.id",
     },
     {
       name: "Argopuro",
@@ -82,6 +86,7 @@ export default function MountainPhone() {
       address: "Probolinggo, Situbondo, Bondowoso",
       track: ["Bremi", "Baderan"],
       file: "../../rute/argopuro.pdf",
+      linkRegistration: "https://www.tiket.bbksdajatim.org",
     },
     {
       name: "Lawu",
@@ -90,10 +95,11 @@ export default function MountainPhone() {
       image: lawuImg,
       bgClass: "bg-lawuBg",
       description:
-        "Gunung Lawu adalah sebuah gunung berapi aktif yang terletak di Pulau Jawa, tepatnya di perbatasan Jawa Tengah dan Jawa Timur, Indonesia. Gunung Lawu memiliki ketinggian sekitar 3.265 mdpl. Gunung Lawu terletak di antara tiga kabupaten, yaitu Karanganyar di Jawa Tengah, Ngawi, dan Magetan di Jawa Timur. Status gunung ini adalah gunung api, yang diperkirakan terakhir meletus pada tanggal 28 November 1885 dan telah lama tidak aktif",
+        "Gunung Lawu adalah sebuah gunung berapi aktif yang terletak di Pulau Jawa, tepatnya di perbatasan Jawa Tengah dan Jawa Timur, Indonesia. Gunung Lawu memiliki ketinggian sekitar 3.265 mdpl. Gunung Lawu terletak di antara tiga kabupaten, yaitu Karanganyar di Jawa Tengah, Ngawi, dan Magetan di Jawa Timur.",
       address: "Karanganyar, Magetan",
       track: ["Cemoro Sewu", "Cemoro Kandang", "Candi Cetho", "Singolangu"],
       file: "../../rute/lawu.pdf",
+      linkRegistration: "",
     },
     {
       name: "Butak",
@@ -111,6 +117,7 @@ export default function MountainPhone() {
         "Gunung Panderman, Batu",
       ],
       file: "../../rute/butak.pdf",
+      linkRegistration: "http://www.tiketpendakian.com",
     },
   ];
 
@@ -190,10 +197,20 @@ export default function MountainPhone() {
               <div className="mt-10">
                 <a
                   href={mountainToDisplay.file}
-                  className="inline-block px-5 py-2 text-sm font-semibold text-black bg-white rounded-md"
+                  className="inline-block px-5 py-2 text-sm font-semibold text-white rounded-md bg-glass hover:bg-white hover:text-black"
                   download
                 >
                   Download Jalur
+                </a>
+
+                <a
+                  href={mountainToDisplay.linkRegistration}
+                  className="inline-block py-2 font-semibold text-white rounded-md bg-glass ms-2 text-md px-7 hover:bg-white hover:text-black"
+                  target="_blank"
+                >
+                  {mountainToDisplay.name === "Lawu"
+                    ? "Registrasi Offline"
+                    : "Registrasi Online"}
                 </a>
               </div>
             </div>
