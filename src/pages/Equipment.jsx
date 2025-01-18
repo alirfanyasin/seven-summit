@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
 import { Navbar } from "../components/Navbar";
 import iconSearch from "../../public/icon-search.png";
 
@@ -16,6 +17,29 @@ export default function Equipment() {
 
   return (
     <div className="bg-[#040A16]">
+      <Helmet>
+        <title>Perlengkapan Pendakian - Pilihan Terbaik untuk Pendaki</title>
+        <meta
+          name="description"
+          content="Cari perlengkapan pendakian terbaik untuk pemula, menengah, hingga profesional. Temukan rekomendasi peralatan yang dibutuhkan untuk perjalanan yang aman dan nyaman."
+        />
+        <meta
+          name="keywords"
+          content="perlengkapan pendakian, gear pendakian, tas ransel, sepatu gunung, perlengkapan survival"
+        />
+        <meta name="author" content="Tim Pendakian" />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:title"
+          content="Perlengkapan Pendakian - Pilihan Terbaik untuk Pendaki"
+        />
+        <meta
+          property="og:description"
+          content="Cari perlengkapan pendakian terbaik untuk pemula, menengah, hingga profesional. Temukan rekomendasi peralatan yang dibutuhkan untuk perjalanan yang aman dan nyaman."
+        />
+        <meta property="og:image" content="URL_TO_YOUR_IMAGE" />
+        <meta property="og:url" content="URL_TO_YOUR_EQUIPMENT_PAGE" />
+      </Helmet>
       <section className="h-screen bg-center bg-cover bg-heroImage3">
         <Navbar />
 

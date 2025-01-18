@@ -1,8 +1,9 @@
 import { Navbar } from "../components/Navbar";
+import { Helmet } from "react-helmet";
+import { useState } from "react";
 import discordIcon from "../../public/icon-discord.png";
 import qrIcon from "../../public/icon-qr.png";
 import qrCode from "../../public/qr-code.png";
-import { useState } from "react";
 
 export default function Community() {
   const [qr, setQr] = useState("hidden");
@@ -17,6 +18,29 @@ export default function Community() {
 
   return (
     <div className="bg-[#040A16]">
+      <Helmet>
+        <title>Komunitas Pendakian - Bergabung dengan Kami</title>
+        <meta
+          name="description"
+          content="Bergabung dengan komunitas pendakian kami untuk berbagi pengalaman, tips, dan informasi terbaru tentang dunia pendakian."
+        />
+        <meta
+          name="keywords"
+          content="komunitas pendakian, forum pendaki, diskusi pendakian, petualangan bersama"
+        />
+        <meta name="author" content="Tim Pendakian" />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:title"
+          content="Komunitas Pendakian - Bergabung dengan Kami"
+        />
+        <meta
+          property="og:description"
+          content="Bergabung dengan komunitas pendakian kami untuk berbagi pengalaman, tips, dan informasi terbaru tentang dunia pendakian."
+        />
+        <meta property="og:image" content="URL_TO_YOUR_IMAGE" />
+        <meta property="og:url" content="URL_TO_YOUR_COMMUNITY_PAGE" />
+      </Helmet>
       <section className="h-screen bg-center bg-cover bg-heroImage4">
         <Navbar />
 

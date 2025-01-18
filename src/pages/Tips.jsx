@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 import { Navbar } from "../components/Navbar";
 
 export default function Tips() {
@@ -22,6 +23,30 @@ export default function Tips() {
 
   return (
     <div className="bg-[#050902] h-full">
+      <Helmet>
+        <title>Tips Pendakian - Panduan Lengkap untuk Semua Level</title>
+        <meta
+          name="description"
+          content="Baca artikel terkait tips dan cara yang baik dan benar untuk pendaki tingkat pemula, menengah, dan profesional. Pelajari tentang perlengkapan, cuaca ekstrem, dan banyak lagi!"
+        />
+        <meta
+          name="keywords"
+          content="tips pendakian, pendaki pemula, pendaki menengah, pendaki profesional, perlengkapan pendakian, cuaca ekstrem"
+        />
+        <meta name="author" content="Tim Pendakian" />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:title"
+          content="Tips Pendakian - Panduan Lengkap untuk Semua Level"
+        />
+        <meta
+          property="og:description"
+          content="Baca artikel terkait tips dan cara yang baik dan benar untuk pendaki tingkat pemula, menengah, dan profesional. Pelajari tentang perlengkapan, cuaca ekstrem, dan banyak lagi!"
+        />
+        <meta property="og:image" content="URL_TO_YOUR_IMAGE" />
+        <meta property="og:url" content="URL_TO_YOUR_TIPS_PAGE" />
+      </Helmet>
+
       <section className="bg-center bg-cover h-[600px] bg-heroImage5">
         <Navbar />
 

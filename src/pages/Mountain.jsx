@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
 import { Navbar } from "../components/Navbar";
 
 import semeruImg from "../../public/mountain/semeru.jpg";
@@ -139,6 +140,30 @@ export default function Mountain() {
 
   return (
     <main className={`h-screen bg-center bg-cover ${bgClass} `}>
+      <Helmet>
+        <title>Gunung - Destinasi Pendakian Terbaik</title>
+        <meta
+          name="description"
+          content="Temukan berbagai gunung menantang untuk pendakian, dari yang cocok untuk pemula hingga yang ekstrem untuk pendaki profesional."
+        />
+        <meta
+          name="keywords"
+          content="gunung, pendakian, destinasi pendakian, pendaki pemula, pendaki profesional"
+        />
+        <meta name="author" content="Tim Pendakian" />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:title"
+          content="Gunung - Destinasi Pendakian Terbaik"
+        />
+        <meta
+          property="og:description"
+          content="Temukan berbagai gunung menantang untuk pendakian, dari yang cocok untuk pemula hingga yang ekstrem untuk pendaki profesional."
+        />
+        <meta property="og:image" content="URL_TO_YOUR_IMAGE" />
+        <meta property="og:url" content="URL_TO_YOUR_MOUNTAIN_PAGE" />
+      </Helmet>
+
       <Navbar />
 
       <div className="hidden lg:block">
