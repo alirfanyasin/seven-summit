@@ -1,15 +1,17 @@
-import { Navbar } from "../components/Navbar";
-import img1 from "../../public/img-1.jpg";
-import img2 from "../../public/img-2.jpg";
-import img3 from "../../public/img-3.jpg";
-import img4 from "../../public/img-4.jpg";
-import img5 from "../../public/img-5.jpg";
-import img6 from "../../public/img-6.jpg";
-import img7 from "../../public/img-7.jpg";
-import img8 from "../../public/img-8.jpg";
-import img9 from "../../public/img-9.jpg";
-import img10 from "../../public/img-10.jpg";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { Navbar } from "../components/Navbar";
+
+import img1 from "../../public/content-tips/img-1.jpg";
+import img2 from "../../public/content-tips/img-2.jpg";
+import img3 from "../../public/content-tips/img-3.jpg";
+import img4 from "../../public/content-tips/img-4.jpg";
+import img5 from "../../public/content-tips/img-5.jpg";
+import img6 from "../../public/content-tips/img-6.jpg";
+import img7 from "../../public/content-tips/img-7.jpg";
+import img8 from "../../public/content-tips/img-8.jpg";
+import img9 from "../../public/content-tips/img-9.jpg";
+import img10 from "../../public/content-tips/img-10.jpg";
 
 export default function Tips() {
   const [filter, setFilter] = useState("semua");
@@ -159,8 +161,8 @@ export default function Tips() {
           {datas
             .filter((data) => filter === "semua" || data.level === filter)
             .map((data, index) => (
-              <a
-                href={`tips/${data.id}`}
+              <Link
+                to={`/tips/${data.id}`}
                 className="block p-3 card bg-glass rounded-xl group"
                 key={index}
               >
@@ -180,7 +182,7 @@ export default function Tips() {
                 <p className="mt-3 font-light text-slate-600 font-sm">
                   {data.date}
                 </p>
-              </a>
+              </Link>
             ))}
         </div>
       </section>

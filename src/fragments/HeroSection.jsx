@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import axios from "axios";
+
 import { Navbar } from "../components/Navbar";
 import { NotFoundCity } from "../components/NotFoundCity";
 
@@ -12,8 +14,6 @@ import rainIcon from "../../public/weather/rain.png";
 import snowIcon from "../../public/weather/snow.png";
 import humidityIcon from "../../public/icon-humidity.png";
 import windIcon from "../../public/icon-wind.png";
-
-import axios from "axios";
 
 export default function HeroSection() {
   const [mapMountain, setMapMountain] = useState(

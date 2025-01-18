@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function SimaksiSection() {
   return (
     <section className="container mt-32">
@@ -15,12 +17,12 @@ export default function SimaksiSection() {
           <strong className="font-semibold">menu Gunung</strong> dan dapatkan
           simaksi sebelum melakukan pendakian.
         </p>
-        <a
-          href="/gunung"
+        <Link
+          to={"/gunung"}
           className="inline-block py-2 mt-5 font-semibold text-white rounded-md bg-glass ms-2 text-md px-7 hover:bg-white hover:text-black"
         >
           Pelajari lebih lanjut
-        </a>
+        </Link>
       </header>
     </section>
   );

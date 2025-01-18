@@ -1,14 +1,16 @@
-import semeruImg from "../../public/semeru.jpg";
-import arjunoImg from "../../public/arjuno.jpg";
-import raungImg from "../../public/raung.jpg";
-import welirangImg from "../../public/welirang.jpg";
-import argopuroImg from "../../public/argopuro.jpeg";
-import lawuImg from "../../public/lawu.jpg";
-import butakImg from "../../public/butak.jpg";
+import { useState } from "react";
+
 import iconLocation from "../../public/icon-location.png";
 import iconHeight from "../../public/icon-height.png";
 import iconRute from "../../public/icon-rute.png";
-import { useState } from "react";
+
+import semeruImg from "../../public/mountain/semeru.jpg";
+import arjunoImg from "../../public/mountain/arjuno.jpg";
+import raungImg from "../../public/mountain/raung.jpg";
+import welirangImg from "../../public/mountain/welirang.jpg";
+import argopuroImg from "../../public/mountain/argopuro.jpg";
+import lawuImg from "../../public/mountain/lawu.jpg";
+import butakImg from "../../public/mountain/butak.jpg";
 
 export default function MountainPhone() {
   const [bgClass, setBgClass] = useState("bg-heroImage2");
