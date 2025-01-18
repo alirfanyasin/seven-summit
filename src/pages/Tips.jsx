@@ -2,121 +2,23 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Navbar } from "../components/Navbar";
 
-import img1 from "../../public/content-tips/img-1.jpg";
-import img2 from "../../public/content-tips/img-2.jpg";
-import img3 from "../../public/content-tips/img-3.jpg";
-import img4 from "../../public/content-tips/img-4.jpg";
-import img5 from "../../public/content-tips/img-5.jpg";
-import img6 from "../../public/content-tips/img-6.jpg";
-import img7 from "../../public/content-tips/img-7.jpg";
-import img8 from "../../public/content-tips/img-8.jpg";
-import img9 from "../../public/content-tips/img-9.jpg";
-import img10 from "../../public/content-tips/img-10.jpg";
-
 export default function Tips() {
   const [filter, setFilter] = useState("semua");
+  const [datas, setDatas] = useState([]);
 
   useEffect(() => {
-    console.log("ok");
+    // Fetch data dari file JSON
+    fetch("/content-tips/datas-content.json")
+      .then((response) => response.json())
+      .then((data) => setDatas(data))
+      .catch((error) => console.error("Error fetching data:", error));
+
     window.HSStaticMethods.autoInit();
   }, []);
 
   const handleFilter = (e) => {
     setFilter(e.target.value);
   };
-
-  const datas = [
-    {
-      id: 1,
-      title: "Tips Pendakian Bagi Pemula",
-      description:
-        "Panduan lengkap untuk pendaki pemula, mulai dari persiapan fisik hingga mental yang dibutuhkan saat mendaki.",
-      image: img1,
-      date: "2 November 2024",
-      level: "pemula",
-    },
-    {
-      id: 2,
-      title: "Mengenal Perlengkapan Dasar Pendakian",
-      description:
-        "Perlengkapan wajib untuk pendaki pemula yang ingin mendaki dengan aman dan nyaman.",
-      image: img2,
-      date: "5 November 2024",
-      level: "pemula",
-    },
-    {
-      id: 3,
-      title: "Cara Mengatur Waktu dan Jadwal Pendakian",
-      description:
-        "Kiat penting mengatur jadwal pendakian agar perjalanan lancar dan aman bagi pemula.",
-      image: img3,
-      date: "7 November 2024",
-      level: "pemula",
-    },
-    {
-      id: 4,
-      title: "Memilih Sepatu Pendakian yang Tepat",
-      description:
-        "Langkah-langkah memilih sepatu pendakian yang sesuai dengan medan dan tingkat kenyamanan.",
-      image: img4,
-      date: "10 November 2024",
-      level: "menengah",
-    },
-    {
-      id: 5,
-      title: "Strategi Bertahan di Cuaca Ekstrem",
-      description:
-        "Panduan menghadapi cuaca ekstrem saat pendakian, termasuk tips bertahan dalam suhu rendah.",
-      image: img5,
-      date: "12 November 2024",
-      level: "menengah",
-    },
-    {
-      id: 6,
-      title: "Panduan Navigasi dan Membaca Peta",
-      description:
-        "Cara membaca peta dan kompas untuk pendaki tingkat menengah yang ingin mandiri di jalur pendakian.",
-      image: img6,
-      date: "15 November 2024",
-      level: "menengah",
-    },
-    {
-      id: 7,
-      title: "Teknik Survival di Gunung",
-      description:
-        "Kemampuan survival dasar dan lanjutan untuk menghadapi situasi darurat saat mendaki gunung.",
-      image: img7,
-      date: "20 November 2024",
-      level: "profesional",
-    },
-    {
-      id: 8,
-      title: "Penyusunan Perlengkapan untuk Ekspedisi Panjang",
-      description:
-        "Tips packing dan manajemen perlengkapan untuk ekspedisi pendakian panjang atau berhari-hari.",
-      image: img8,
-      date: "25 November 2024",
-      level: "profesional",
-    },
-    {
-      id: 9,
-      title: "Memilih Jalur Pendakian Ekstrem untuk Pendaki Profesional",
-      description:
-        "Rekomendasi jalur pendakian ekstrem dan tantangan yang cocok untuk pendaki profesional.",
-      image: img9,
-      date: "28 November 2024",
-      level: "profesional",
-    },
-    {
-      id: 10,
-      title: "Mengelola Risiko dan Keamanan Saat Pendakian Solo",
-      description:
-        "Panduan lengkap tentang manajemen risiko dan keamanan saat melakukan pendakian solo.",
-      image: img10,
-      date: "30 November 2024",
-      level: "profesional",
-    },
-  ];
 
   return (
     <div className="bg-[#050902] h-full">
