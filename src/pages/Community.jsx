@@ -54,7 +54,7 @@ export default function Community() {
             </p>
             <div className="flex items-center justify-start mt-5">
               <a
-                href="https://discord.gg/5m2p2NnY"
+                href="https://discord.gg/E5pDkRDhYd"
                 target="_blank"
                 className="inline-block px-5 py-3 font-semibold text-white rounded-md bg-glass"
               >
